@@ -4,7 +4,7 @@ import cloudy from "./assets/img/cloudy.jpg";
 import freezing from "./assets/img/freezing.jpg";
 import storm from "./assets/img/storm.jpg";
 import sunny from "./assets/img/sunny.jpg";
-import rainy from './assets/img/rainy.jpg'
+import rainy from "./assets/img/rainy.jpg";
 import "./App.css";
 
 function App() {
@@ -106,8 +106,10 @@ function App() {
   const [imgBg, setImgBg] = useState(cloudy);
 
   function imgSetter(code) {
-    if (code === 0 || (code >= 1 && code <= 3)) {
+    if (code === 0) {
       return sunny;
+    } else if (code >= 1 && code <= 3) {
+      return cloudy;
     } else if (code === 45 || code === 48) {
       return cloudy;
     } else if ((code >= 51 && code <= 55) || (code >= 61 && code <= 65)) {
@@ -117,9 +119,9 @@ function App() {
     } else if (code >= 71 && code <= 75) {
       return freezing;
     } else if (code === 77) {
-      return freezing;
+      return rainy;
     } else if ((code >= 80 && code <= 82) || (code >= 85 && code <= 86)) {
-      return freezing;
+      return rainy;
     } else if (code === 95 || (code >= 96 && code <= 99)) {
       return storm;
     } else {
@@ -127,11 +129,11 @@ function App() {
     }
   }
   //  enter funct
-const handleKeyPress = (event) => {
-  if (event.key === "Enter") {
-    searchLocation(event.target.value);
-  }
-};
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      searchLocation(event.target.value);
+    }
+  };
   return (
     <>
       <div className="my--container border w-screen flex flex-col justify-between ">
