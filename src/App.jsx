@@ -1,31 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import axios from 'axios';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const url =
+    "https://api.open-meteo.com/v1/forecast?latitude=28.6358&longitude=77.2245&current=temperature_2m,precipitation,weather_code&forecast_days=1";
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="my--container border w-screen">
+        <h1 className=" text-2xl font-bold p-3 text-center">Weather App</h1>
+        <div className="top">
+          <div className="location">
+            <p className="border-2 border-purple-500">Rome</p>
+          </div>
+          <div className="temp">
+            <h1>24 °C</h1>
+          </div>
+          <div className="description">
+            <p>Sunny?</p>
+          </div>
+        </div>
+        {/* --- lower section*/}
+        <div className="bottom">
+          <div className="humidity">
+            <p>20%</p>
+          </div>
+          <div className="wind"></div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p className=" text-red-500 text-lg font-bold py-3">Works with Tailwind</p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
