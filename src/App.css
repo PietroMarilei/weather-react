@@ -5,3 +5,19 @@
     background-image: url(./assets/img/cloudy.jpg);
     background-position: center;
 }
+
+.my_button {
+    border-radius: 4px;
+    background-color: #3d405b;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 0.5rem 2rem;
+   
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+
