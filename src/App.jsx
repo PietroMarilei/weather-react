@@ -24,7 +24,7 @@ function App() {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m&forecast_days=1`;
 
   const searchLocation = () => {
-    console.log("searching... ->", locName);
+    // console.log("searching...->", locName);
     axios
       .get(`https://geocode.maps.co/search?q=${locName}`, {
         params: {},
@@ -50,6 +50,7 @@ function App() {
           .catch(function (error) {
             console.log(error);
           });
+          
       })
       .catch(function (error) {
         console.log(error);
